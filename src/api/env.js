@@ -3,7 +3,7 @@ let Config={
         return {
             //Configure the offline DB
             OFFLINE_DB_NAME:{
-                STORAGE:ClientConfig?.OFFLINE_DB_NAME||'swyger_storage'
+                STORAGE:ClientConfig?.OFFLINE_DB_NAME?.STORAGE||'swyger_storage'
             },
 
             //Configure the server
