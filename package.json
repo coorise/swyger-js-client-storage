@@ -1,5 +1,5 @@
 {
-  "name": "@swyger/client",
+  "name": "@swyger/client-storage",
   "version": "0.1.3",
   "description": "Swyger Storage Client JS library is used for Swyger Server as consumer Rest API for CRUD operation on a file! Visit the master branch: https://github.com/coorise/swyger-js-client-storage.git",
   "type": "module",
@@ -27,7 +27,7 @@
     "build:bundle": "cross-env NODE_ENV=dev BUILD_MODE=bundle  node ./replace-src.js && vite build -- --bundle",
     "start": "vite preview"
   },
-  "keywords": ["Client","RestAPI","API","Swyger","Swyger Client","Boilerplate","CMS","Storage","Cloud"],
+  "keywords": ["Client","RestAPI","API","Swyger","Swyger Client","Boilerplate","CMS","Storage","Cloud","firebase storage"],
   "author": "Agglomy",
   "license": "MIT",
   "dependencies": {
