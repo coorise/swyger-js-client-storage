@@ -11,7 +11,6 @@
     </h1>
 </div>
 <script>
-    console.log('Loading files');
     // Download the swyger auth client library on: https://www.unpkg.com/@swyger/client-storage
     //then save it somewhere in your directory like "/dist/swyger-client-storage.min.js"
 
@@ -30,12 +29,9 @@
 
             //Configure the server
             HOST_SERVER:{
-                //AUTH:'http://localhost:4100',
-                AUTH:'https://auth.server.agglomy.com',
-                //DATABASE:'http://localhost:4400',
-                DATABASE:'https://database.server.agglomy.com',
-                //STORAGE:'http://localhost:4500',
-                STORAGE:'https://storage.server.agglomy.com',
+                AUTH:'http://localhost:4100',
+                DATABASE:'http://localhost:4400',
+                STORAGE:'http://localhost:4500',
             },
             API_VERSION:{
                 AUTH:'/api/v1',
@@ -55,7 +51,7 @@
             channelId:'discord-channel-id'
         }
         let location='local' //discord/aws/google
-        let storageRef=client?.storage(location,storageConfig).ref('/your/parent/ref') //like firebase storage
+        //let storageRef=client?.storage(location,storageConfig).ref('/your/parent/ref') //like firebase storage
         //storageRef.upload({object},callback)
         //...
     })();

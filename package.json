@@ -1,6 +1,6 @@
 {
   "name": "@swyger/client-storage",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Swyger Storage Client JS library is used for Swyger Server as consumer Rest API for CRUD operation on a file! Visit the master branch: https://github.com/coorise/swyger-js-client-storage.git",
   "type": "module",
   "main": "dist/swyger-client-storage.min.js",
