@@ -6,3 +6,10 @@ logs
 .backup
 *.zip
 .vscode
+src
+static
+dist/index.html
+dist/index.html.br
+index.html
+replace-src.js
+vite.config.js

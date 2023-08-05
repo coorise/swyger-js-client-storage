@@ -17,7 +17,7 @@ const SocketService = {
       }
       if(accessToken) extraHeaders['Authorization']='Bearer '+accessToken
 
-      socket.storage = io(HOST_SERVER.STORAGE,{
+      socket.storage = io(HOST_SERVER?.STORAGE,{
         extraHeaders
       });
 
@@ -26,6 +26,7 @@ const SocketService = {
         if(ENV==='dev') console.log('Swyger Storage Client JS is connected with Swyger Server!!!')
 
       })
+      if(!socket?.storage) socket?.storage?.disconnect()
       socket?.storage?.on("disconnect", (reason) => {
         if(ENV==='dev') console.log('The device is disconnected from Storage server!')
 
@@ -36,6 +37,7 @@ const SocketService = {
         }*/
         // else the socket will automatically try to reconnect
       });
+
 
       return socket;
     }catch (e) {
