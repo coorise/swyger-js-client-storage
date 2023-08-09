@@ -704,9 +704,7 @@ class SwygerClient{
     }
     let event=(path,socket)=>{
       let ref='%'+path
-      let parent=this.init(req)
-      delete parent.auth().login
-      delete parent.auth().register
+      let parent=this.init(req)?.storage()
       return {
         private:(id=generateQuickGuid())=>{
           return parent.event(path + id)
@@ -1232,10 +1230,10 @@ class SwygerClient{
               ...parent
             }
             let listen=parent.ref(path,config,socket)
-            listen?.on().create(callback)
-            listen?.on().update(callback)
-            listen?.on().delete(callback)
-            listen?.on().upload(callback)
+            listen?.on()?.create(callback)
+            listen?.on()?.update(callback)
+            listen?.on()?.delete(callback)
+            listen?.on()?.upload(callback)
             return node
           }
         }
