@@ -713,39 +713,44 @@ class SwygerClient{
           return parent.event(path + childPath)
         },
         push:(data,callback)=>{
+          let event=parent.event(path)
           socket?.emit(ref,data)
-          if(typeof callback=='function') parent.event(path).do(callback)
+          if(typeof callback=='function') event?.onValue(callback)
           return {
-            ...parent.event(path),
+            ...event,
             ...parent
           }
         },
         onValue:(callback)=>{
+          let event=parent.event(path)
           socket?.on(ref,(result)=>{
             if(typeof callback=='function')
               callback({
-                ...parent.event(path),
+                ...event,
                 ...parent,
                 value:result
               })
           })
           return {
-            ...parent.event(path),
+            ...event,
             ...parent
           }
         },
         onAnyValue:(callback)=>{
           socket?.onAny((eventName,args)=>{
-
+            let event=parent.event(eventName)
             if(typeof callback =='function') callback(
               eventName,
               {
                 value:args,
-                ...parent.event(eventName),
+                ...event,
                 ...parent
               }
             )
           })
+          return {
+            ...parent
+          }
         }
       }
     }
