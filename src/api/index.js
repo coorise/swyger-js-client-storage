@@ -712,7 +712,7 @@ class SwygerClient{
         child:(childPath)=>{
           return parent.event(path + childPath)
         },
-        emit:(data,callback)=>{
+        push:(data,callback)=>{
           socket?.emit(ref,data)
           if(typeof callback=='function') parent.event(path).do(callback)
           return {
@@ -720,7 +720,7 @@ class SwygerClient{
             ...parent
           }
         },
-        do:(callback)=>{
+        onValue:(callback)=>{
           socket?.on(ref,(result)=>{
             if(typeof callback=='function')
               callback({
@@ -734,7 +734,7 @@ class SwygerClient{
             ...parent
           }
         },
-        onAny:(callback)=>{
+        onAnyValue:(callback)=>{
           socket?.onAny((eventName,args)=>{
 
             if(typeof callback =='function') callback(
